@@ -14,6 +14,7 @@ class PageChild extends StatefulWidget {
 class _PageViewState extends State<PageChild> {
   @override
   Widget build(BuildContext context) {
+    debugPrint("index = ${widget.text}");
     return Center(
       child: Text(widget.text, textScaleFactor: 5),
     );

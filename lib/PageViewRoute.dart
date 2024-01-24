@@ -17,7 +17,10 @@ class PageViewRoute extends StatelessWidget {
       appBar: AppBar(
         title: const Text("PageView"),
       ),
-      body: PageView(scrollDirection: Axis.vertical, children: children),
+      body: PageView(
+          allowImplicitScrolling: true,
+          scrollDirection: Axis.vertical,
+          children: children),
     );
   }
 }
