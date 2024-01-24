@@ -8,6 +8,7 @@ import 'FlexLayoutTestRoute.dart';
 import 'GridViewRoute.dart';
 import 'ListViewPage.dart';
 import 'PageViewRoute.dart';
+import 'TabViewRoute.dart';
 import 'TapBoxA.dart';
 
 void main() {
@@ -48,7 +49,8 @@ class MyApp extends StatelessWidget {
         "listview_route": (context) => const ListViewPage(),
         "animated_route": (context) => const AnimatedListRoute(),
         "gridview_route": (context) => const GrideViewRoute(),
-        "pageview_route": (context) => const PageViewRoute()
+        "pageview_route": (context) => const PageViewRoute(),
+        "tabview_route": (context) => const TabViewRoute()
       },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -179,6 +181,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 label: const Text("pageview_route"),
                 onPressed: () {
                   Navigator.pushNamed(context, "pageview_route");
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.send),
+                label: const Text("tabview_route"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "tabview_route");
                 },
               ),
               Container(
