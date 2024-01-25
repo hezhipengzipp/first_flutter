@@ -1,4 +1,5 @@
 import 'package:english_words/english_words.dart';
+import 'package:first_flutter/CustomScrollViewRoute.dart';
 import 'package:first_flutter/FormTestRoute.dart';
 import 'package:first_flutter/NewRoute.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +51,8 @@ class MyApp extends StatelessWidget {
         "animated_route": (context) => const AnimatedListRoute(),
         "gridview_route": (context) => const GrideViewRoute(),
         "pageview_route": (context) => const PageViewRoute(),
-        "tabview_route": (context) => const TabViewRoute()
+        "tabview_route": (context) => const TabViewRoute(),
+        "custom_scroll_route": (context) => const CustomScrollViewRoute()
       },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -188,6 +190,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 label: const Text("tabview_route"),
                 onPressed: () {
                   Navigator.pushNamed(context, "tabview_route");
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.send),
+                label: const Text("custom_scroll_route"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "custom_scroll_route");
                 },
               ),
               Container(
