@@ -5,6 +5,7 @@ import 'package:first_flutter/NewRoute.dart';
 import 'package:flutter/material.dart';
 
 import 'AnimatedListRoute.dart';
+import 'AsyncClife.dart';
 import 'FlexLayoutTestRoute.dart';
 import 'GridViewRoute.dart';
 import 'ListViewPage.dart';
@@ -52,7 +53,8 @@ class MyApp extends StatelessWidget {
         "gridview_route": (context) => const GrideViewRoute(),
         "pageview_route": (context) => const PageViewRoute(),
         "tabview_route": (context) => const TabViewRoute(),
-        "custom_scroll_route": (context) => const CustomScrollViewRoute()
+        "custom_scroll_route": (context) => const CustomScrollViewRoute(),
+        "async_clife_route": (context) => const AsyncClifeRoute(),
       },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -197,6 +199,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 label: const Text("custom_scroll_route"),
                 onPressed: () {
                   Navigator.pushNamed(context, "custom_scroll_route");
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.send),
+                label: const Text("async_clife_route"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "async_clife_route");
                 },
               ),
               Container(

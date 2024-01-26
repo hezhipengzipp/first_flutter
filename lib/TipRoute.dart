@@ -7,6 +7,10 @@ class TipRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const list = ['apples', 'bananas', 'oranges'];
+    list.map((item) => item.toUpperCase()).forEach((item) {
+      debugPrint('$item: ${item.length}');
+    });
     Widget redBox =
         const DecoratedBox(decoration: BoxDecoration(color: Colors.red));
     return Scaffold(
