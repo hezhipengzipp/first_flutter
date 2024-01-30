@@ -13,6 +13,7 @@ class AsyncClifeRoute extends StatefulWidget {
 class _AsyncClifeState extends State<AsyncClifeRoute> {
   String text = "事件未开始";
   String jsonText = "json数据";
+  String streamValue = "Stream = 0";
 
   Future<String> _getNetData() async {
     final netdata = await File("netData.json").readAsString(encoding: utf8);
@@ -20,6 +21,20 @@ class _AsyncClifeState extends State<AsyncClifeRoute> {
       jsonText = netdata;
     });
     return netdata;
+  }
+
+  Future<int> _sumStrem(Stream<int> stream) async {
+    var sum = 0;
+    await for (final value in stream) {
+      sum += value;
+    }
+    return sum;
+  }
+
+  Stream<int> counterStream(int to) async* {
+    for (int i = 0; i < to; i++) {
+      yield i;
+    }
   }
 
   @override
@@ -51,10 +66,20 @@ class _AsyncClifeState extends State<AsyncClifeRoute> {
                 child: const Text("点击跳转")),
             TextButton(
                 onPressed: () {
-                  debugPrint('42'.padLeft(5,'A'));
+                  debugPrint('42'.padLeft(5, 'A'));
                 },
                 child: const Text("开始padLeft")),
-            Text(jsonText)
+            Text(jsonText),
+            TextButton(
+                onPressed: () async {
+                  var stream = counterStream(10);
+                  final counter = await _sumStrem(stream);
+                  setState(() {
+                    streamValue = 'Stream = $counter';
+                  });
+                },
+                child: const Text("开始Stream")),
+            Text(streamValue)
           ],
         ),
       ),

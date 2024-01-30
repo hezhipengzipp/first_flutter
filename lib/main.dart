@@ -3,17 +3,22 @@ import 'package:first_flutter/CustomScrollViewRoute.dart';
 import 'package:first_flutter/FormTestRoute.dart';
 import 'package:first_flutter/NewRoute.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'AnimatedListRoute.dart';
+import 'AnimationRoute.dart';
 import 'AsyncClife.dart';
 import 'FlexLayoutTestRoute.dart';
+import 'GetStorageRoute.dart';
 import 'GridViewRoute.dart';
 import 'ListViewPage.dart';
 import 'PageViewRoute.dart';
 import 'TabViewRoute.dart';
 import 'TapBoxA.dart';
+import 'WillPopScopeTestRoute.dart';
 
-void main() {
+void main() async {
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
@@ -55,6 +60,9 @@ class MyApp extends StatelessWidget {
         "tabview_route": (context) => const TabViewRoute(),
         "custom_scroll_route": (context) => const CustomScrollViewRoute(),
         "async_clife_route": (context) => const AsyncClifeRoute(),
+        "get_storage_route": (context) => const GetStorageRoute(),
+        "transition_route": (context) => const TransitionsHomePage(),
+        "popscope_route": (context) => const WillPopScopeTestRoute(),
       },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -206,6 +214,27 @@ class _MyHomePageState extends State<MyHomePage> {
                 label: const Text("async_clife_route"),
                 onPressed: () {
                   Navigator.pushNamed(context, "async_clife_route");
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.send),
+                label: const Text("get_storage_route"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "get_storage_route");
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.send),
+                label: const Text("transition_route"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "transition_route");
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.send),
+                label: const Text("popscope_route"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "popscope_route");
                 },
               ),
               Container(
