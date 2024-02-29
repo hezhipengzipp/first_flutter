@@ -29,7 +29,7 @@ class _WillPopScopeState extends State<WillPopScopeTestRoute> {
             child: Column(
               children: [
                 TextButton(
-                  child: const Text("点击返回键退出"),
+                  child: const Text("点击三次才能返回"),
                   onPressed: () {
                     setState(() {
                       ++isCanQuit;

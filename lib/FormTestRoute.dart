@@ -19,10 +19,7 @@ class FormTestRouteState extends State<FormTestRoute> {
           // TRY THIS: Try changing the color here to a specific color (to
           // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
           // change color while the other colors stay the same.
-          backgroundColor: Theme
-              .of(context)
-              .colorScheme
-              .inversePrimary,
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
           title: const Text("我是form"),
@@ -53,6 +50,9 @@ class FormTestRouteState extends State<FormTestRoute> {
                   icon: Icon(Icons.lock),
                 ),
                 obscureText: true,
+                onChanged: (value) {
+                  debugPrint(value);
+                },
                 //校验密码
                 validator: (v) {
                   return v!.trim().length > 5 ? null : "密码不能少于6位";
@@ -73,10 +73,17 @@ class FormTestRouteState extends State<FormTestRoute> {
                           // 通过_formKey.currentState 获取FormState后，
                           // 调用validate()方法校验用户名密码是否合法，校验
                           // 通过后再提交数据。
-                          debugPrint("哈哈哈");
-                          debugPrint(_formKey.toString());
+                          debugPrint(_unameController.text);
+                          debugPrint(_formKey.currentState.toString());
                           if ((_formKey.currentState as FormState).validate()) {
-                            //验证通过提交数据
+                            // 验证通过提交数据
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('数据校验通过')),
+                            );
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('数据校验不通过')),
+                            );
                           }
                         },
                       ),

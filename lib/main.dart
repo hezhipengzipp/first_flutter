@@ -13,6 +13,7 @@ import 'GetStorageRoute.dart';
 import 'GridViewRoute.dart';
 import 'ListViewPage.dart';
 import 'PageViewRoute.dart';
+import 'StackRoute.dart';
 import 'TabViewRoute.dart';
 import 'TapBoxA.dart';
 import 'WillPopScopeTestRoute.dart';
@@ -63,6 +64,7 @@ class MyApp extends StatelessWidget {
         "get_storage_route": (context) => const GetStorageRoute(),
         "transition_route": (context) => const TransitionsHomePage(),
         "popscope_route": (context) => const WillPopScopeTestRoute(),
+        "stack_route": (context) => const StackRoutePage(),
       },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -235,6 +237,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 label: const Text("popscope_route"),
                 onPressed: () {
                   Navigator.pushNamed(context, "popscope_route");
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.send),
+                label: const Text("stack_route"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "stack_route");
                 },
               ),
               Container(
