@@ -7,6 +7,8 @@ class NewRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var value = ModalRoute.of(context)?.settings.arguments;
+    debugPrint("跳转传递值:$value");
     return Center(
       child: ElevatedButton(
         onPressed: () async {

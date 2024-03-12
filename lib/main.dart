@@ -159,7 +159,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: const Text('form_route')),
               TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, "new_page");
+                    Navigator.pushNamed(context, "new_page",
+                        arguments: {"Android": "nice"});
                   },
                   child: const Text('open new_page')),
               ElevatedButton.icon(

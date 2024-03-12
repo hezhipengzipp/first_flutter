@@ -20,6 +20,11 @@ class StackRoutePage extends StatelessWidget {
             ),
             const Positioned(left: 18, child: Text("我是Jack")),
             const Positioned(top: 30, child: Text("Android")),
+            const Positioned(
+                top: 50,
+                child: Icon(
+                  Icons.search,
+                )),
           ],
         ),
       ),
