@@ -1,7 +1,9 @@
 import 'package:english_words/english_words.dart';
+import 'package:first_flutter/AnimationTestRoute.dart';
 import 'package:first_flutter/CustomScrollViewRoute.dart';
 import 'package:first_flutter/FormTestRoute.dart';
 import 'package:first_flutter/NewRoute.dart';
+import 'package:first_flutter/statusData/StatusDataManager.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -9,6 +11,7 @@ import 'AnimatedListRoute.dart';
 import 'AnimationRoute.dart';
 import 'AsyncClife.dart';
 import 'FlexLayoutTestRoute.dart';
+import 'FutureRoute.dart';
 import 'GetStorageRoute.dart';
 import 'GridViewRoute.dart';
 import 'ListViewPage.dart';
@@ -17,6 +20,7 @@ import 'StackRoute.dart';
 import 'TabViewRoute.dart';
 import 'TapBoxA.dart';
 import 'WillPopScopeTestRoute.dart';
+import 'combination/GradientPage.dart';
 
 void main() async {
   await GetStorage.init();
@@ -58,13 +62,17 @@ class MyApp extends StatelessWidget {
         "animated_route": (context) => const AnimatedListRoute(),
         "gridview_route": (context) => const GrideViewRoute(),
         "pageview_route": (context) => const PageViewRoute(),
+        "status_data_manager_route": (context) => const StatusDataManager(),
         "tabview_route": (context) => const TabViewRoute(),
+        "gradient_route": (context) => const GradientPage(),
         "custom_scroll_route": (context) => const CustomScrollViewRoute(),
         "async_clife_route": (context) => const AsyncClifeRoute(),
         "get_storage_route": (context) => const GetStorageRoute(),
         "transition_route": (context) => const TransitionsHomePage(),
         "popscope_route": (context) => const WillPopScopeTestRoute(),
+        "Future_build_route": (context) => const FutureRoute(),
         "stack_route": (context) => const StackRoutePage(),
+        "AnimationScale_route": (context) => const AnimationTestRoute(),
       },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -186,9 +194,30 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ElevatedButton.icon(
                 icon: const Icon(Icons.send),
+                label: const Text("gradient_route"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "gradient_route");
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.send),
                 label: const Text("gridview_route"),
                 onPressed: () {
                   Navigator.pushNamed(context, "gridview_route");
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.send),
+                label: const Text("AnimationScale_route"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "AnimationScale_route");
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.send),
+                label: const Text("status_data_manager_route"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "status_data_manager_route");
                 },
               ),
               ElevatedButton.icon(
@@ -245,6 +274,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 label: const Text("stack_route"),
                 onPressed: () {
                   Navigator.pushNamed(context, "stack_route");
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.send),
+                label: const Text("Future_build_route"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "Future_build_route");
                 },
               ),
               Container(
