@@ -21,6 +21,7 @@ import 'TabViewRoute.dart';
 import 'TapBoxA.dart';
 import 'WillPopScopeTestRoute.dart';
 import 'combination/GradientPage.dart';
+import 'generateImage/RepaintBoundryRoute.dart';
 import 'generateImage/generateImage.dart';
 
 void main() async {
@@ -75,6 +76,7 @@ class MyApp extends StatelessWidget {
         "stack_route": (context) => const StackRoutePage(),
         "AnimationScale_route": (context) => const AnimationTestRoute(),
         "Generate_Image_route": (context) => const GenerateImageRoute(),
+        "Repaint_Boundry_route": (context) => const RepaintBoundryRoute(),
       },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -206,6 +208,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 label: const Text("gradient_route"),
                 onPressed: () {
                   Navigator.pushNamed(context, "gradient_route");
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.send),
+                label: const Text("Repaint_Boundry_route"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "Repaint_Boundry_route");
                 },
               ),
               ElevatedButton.icon(
