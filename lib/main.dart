@@ -21,6 +21,7 @@ import 'TabViewRoute.dart';
 import 'TapBoxA.dart';
 import 'WillPopScopeTestRoute.dart';
 import 'combination/GradientPage.dart';
+import 'generateImage/generateImage.dart';
 
 void main() async {
   await GetStorage.init();
@@ -73,6 +74,7 @@ class MyApp extends StatelessWidget {
         "Future_build_route": (context) => const FutureRoute(),
         "stack_route": (context) => const StackRoutePage(),
         "AnimationScale_route": (context) => const AnimationTestRoute(),
+        "Generate_Image_route": (context) => const GenerateImageRoute(),
       },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -176,6 +178,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 label: const Text("flex_route"),
                 onPressed: () {
                   Navigator.pushNamed(context, "flex_route");
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.send),
+                label: const Text("Generate_Image_route"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "Generate_Image_route");
                 },
               ),
               ElevatedButton.icon(
