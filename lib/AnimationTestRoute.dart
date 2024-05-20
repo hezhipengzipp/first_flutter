@@ -21,7 +21,7 @@ class ScaleAnimationState extends State<AnimationTestRoute>
       ..addListener(() {
         setState(() {});
       });
-    // 哈哈
+    // rebase后面文件
     animationController.forward();
   }
 
