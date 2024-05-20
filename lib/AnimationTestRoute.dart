@@ -21,7 +21,7 @@ class ScaleAnimationState extends State<AnimationTestRoute>
       ..addListener(() {
         setState(() {});
       });
-
+    // 哈哈
     animationController.forward();
   }
 
@@ -34,6 +34,7 @@ class ScaleAnimationState extends State<AnimationTestRoute>
           width: animation.value),
     ));
   }
+
 
   @override
   void dispose() {
