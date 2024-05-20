@@ -67,10 +67,10 @@ class GenerateImageRoute extends StatelessWidget {
 
     // final firstImage = await _loadImage('assets/images/icon_test.png');
     final firstImage = await _loadNetImage(
-        'https://sports-health-test.cos.clife.cn/31657/0025b45bd5e0174b2e5822a11a2ca258.png');
+        'https://sports-health-test.cos.clife.cn/31657/b727d4dea1c6d89feb8e0399f44833bd.jpg');
     // final secondImage = await _loadImage('assets/images/dog.jpg');
     final secondImage = await _loadNetImage(
-        'https://sports-health-test.cos.clife.cn/31657/e84dd2bd32aeefc6c6001ef0a4c79917.png');
+        'https://sports-health-test.cos.clife.cn/31657/be8a28e51b2af4dd42c96f4e09d2f518.png');
 
     // 绘制第一张图片
     canvas.drawImageRect(
@@ -90,8 +90,8 @@ class GenerateImageRoute extends StatelessWidget {
       Rect.fromLTWH(
           0, 0, secondImage.width.toDouble(), secondImage.height.toDouble()),
       // 指定绘制的矩形区域
-      Rect.fromLTWH(100, 60, firstImage.width.toDouble() - 200,
-          firstImage.height.toDouble() - 120),
+      Rect.fromLTWH(
+          0, 0, firstImage.width.toDouble(), firstImage.height.toDouble()),
       // 指定在画布上绘制的矩形区域和大小
       Paint(),
     );
@@ -104,6 +104,7 @@ class GenerateImageRoute extends StatelessWidget {
     return byteData!.buffer.asUint8List();
   }
 
+// 上次提交
   Future<ui.Image> _loadImage(String path) async {
     final data = await rootBundle.load(path);
     final codec = await ui.instantiateImageCodec(data.buffer.asUint8List());
