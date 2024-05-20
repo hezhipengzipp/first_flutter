@@ -112,6 +112,7 @@ class GenerateImageRoute extends StatelessWidget {
     return frame.image;
   }
 
+  // 3
   Future<ui.Image> _loadNetImage(String url) async {
     // 使用Image.network加载网络图片
     final Completer<ui.Image> completer = Completer();
