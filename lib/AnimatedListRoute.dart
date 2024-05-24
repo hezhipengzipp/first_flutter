@@ -18,6 +18,7 @@ class _AnimatedListState extends State<AnimatedListRoute> {
       data.add('${i + 1}');
     }
     super.initState();
+    // 第一次提交
   }
 
   @override
