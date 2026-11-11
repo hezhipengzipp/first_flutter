@@ -5,7 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'dart:ui' as ui;
 import 'dart:io';
 import 'package:image/image.dart' as img;
-import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:vision_gallery_saver/vision_gallery_saver.dart';
 
 class RepaintBoundryRoute extends StatelessWidget {
   const RepaintBoundryRoute({super.key});
@@ -73,7 +73,7 @@ class PosterImage extends StatelessWidget {
     ui.Image image = await boundary.toImage();
     ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
     Uint8List pngBytes = byteData!.buffer.asUint8List();
-    await ImageGallerySaver.saveImage(pngBytes);
+    await VisionGallerySaver.saveImage(pngBytes);
   }
 
   // Future<void> _savePoster() async {

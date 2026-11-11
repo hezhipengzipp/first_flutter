@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:vision_gallery_saver/vision_gallery_saver.dart';
 
 class GenerateImageRoute extends StatelessWidget {
   const GenerateImageRoute({super.key});
@@ -12,7 +12,7 @@ class GenerateImageRoute extends StatelessWidget {
     final Uint8List imageBytes = await _generateImage();
 
     // Save the image to the device's gallery
-    await ImageGallerySaver.saveImage(imageBytes);
+    await VisionGallerySaver.saveImage(imageBytes);
   }
 
   @override

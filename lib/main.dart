@@ -17,6 +17,7 @@ import 'GridViewRoute.dart';
 import 'ListViewPage.dart';
 import 'PageViewRoute.dart';
 import 'StackRoute.dart';
+import 'sliver_demo_page.dart';
 import 'TabViewRoute.dart';
 import 'TapBoxA.dart';
 import 'WillPopScopeTestRoute.dart';
@@ -68,6 +69,7 @@ class MyApp extends StatelessWidget {
         "tabview_route": (context) => const TabViewRoute(),
         "gradient_route": (context) => const GradientPage(),
         "custom_scroll_route": (context) => const CustomScrollViewRoute(),
+        "sliver_demo_route": (context) => const SliverDemoPage(),
         "async_clife_route": (context) => const AsyncClifeRoute(),
         "get_storage_route": (context) => const GetStorageRoute(),
         "transition_route": (context) => const TransitionsHomePage(),
@@ -257,6 +259,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 label: const Text("custom_scroll_route"),
                 onPressed: () {
                   Navigator.pushNamed(context, "custom_scroll_route");
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.send),
+                label: const Text("sliver_demo_route"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "sliver_demo_route");
                 },
               ),
               ElevatedButton.icon(
